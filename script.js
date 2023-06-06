@@ -4,11 +4,14 @@ addEventListener("DOMContentLoaded", createGrid(16));
 
 // Create a grid (default 16x16) within container div
 function createGrid(size) {
-  for (let i = 0; i < size; i++) {
+  for (let i = 0; i < (size * size); i++) {
     console.log(i);
     let div = document.createElement("div");
     div.textContent = i + 1;
-    div.style.cssText = "box-sizing: border-box; border-style: solid; border-color: black; width: 100px; height: 100px;";
+    div.style.cssText = "box-sizing: border-box; border-style: solid; border-color: black;";
+
+    div.style.width = `${(400 / size)}px`;
+    div.style.height = `${(400 / size)}px`;
 
     div.addEventListener("mouseover", () => {
       div.className = "hover";
