@@ -9,6 +9,11 @@ function createGrid(size) {
     let div = document.createElement("div");
     div.textContent = i + 1;
     div.style.cssText = "box-sizing: border-box; border-style: solid; border-color: black; width: 100px; height: 100px;";
+
+    div.addEventListener("mouseover", () => {
+      div.className = "hover";
+    })
+
     container.appendChild(div);
   }
 }
