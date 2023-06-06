@@ -17,3 +17,17 @@ function createGrid(size) {
     container.appendChild(div);
   }
 }
+
+let body = document.querySelector("body");
+let button = document.createElement("button");
+button.textContent = "CLICK ME";
+body.appendChild(button);
+
+button.addEventListener("click", () => {
+  let size = prompt("Size?", 16);
+  while (isNaN(size) || size < 16 || size > 100) {
+    size = prompt("Please input a valid number");
+  } 
+
+  console.log(size);
+})
