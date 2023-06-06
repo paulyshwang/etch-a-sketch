@@ -33,4 +33,15 @@ button.addEventListener("click", () => {
   } 
 
   console.log(size);
+  // Apparently the following code doesn't remove event handlers, which may cause memory leaks?
+  // container.innerHTML = "";
+  removeGrid();
+  createGrid(size);
+
 })
+
+function removeGrid() {
+  while (container.firstChild) {
+    container.removeChild(container.firstChild);
+  }
+}
